@@ -24,7 +24,9 @@ inline wallgrid_index wallgrid_locate(WallGrid grid, wallgrid_size x, wallgrid_s
 
 int wallgrid_is_edge(WallGrid grid, wallgrid_index index)
 {
-    return 0;
+    wallgrid_size y = index / grid.width;
+    wallgrid_size x = index % grid.width;
+    return y * (grid.height - 1 - y) == 0 || x * (grid.width - 1 - x) == 0;
 }
 
 int wallgrid_is_valid(WallGrid grid, wallgrid_index index, WallDir dir)
