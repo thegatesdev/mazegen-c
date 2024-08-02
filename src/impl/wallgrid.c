@@ -1,5 +1,7 @@
 #include "wallgrid.h"
 
+#define WallGridSize(w,h) ((w + 1) * (h + 1))
+
 WallGrid wallgrid_create_filled(wallgrid_size width, wallgrid_size height)
 {
     WallGrid grid = {

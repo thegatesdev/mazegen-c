@@ -4,8 +4,6 @@
 #include <stdint.h>
 #include "bitset.h"
 
-#define WallGridSize(w,h) ((w + 1) * (h + 1))
-
 typedef unsigned int wallgrid_size;
 typedef uint_fast32_t wallgrid_index;
 
