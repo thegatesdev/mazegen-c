@@ -4,16 +4,16 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-typedef uint32_t bitset_t;
-typedef uint32_t bitset_size_t;
+typedef unsigned int Bitset;
+typedef uint_fast32_t bitset_index;
 
-#define SetBit(A,k)         ( A[(k)/32] |= (1 << ((k)%32)) )
-#define ClearBit(A,k)       ( A[(k)/32] &= ~(1 << ((k)%32)) )
-#define TestBit(A,k)        ( A[(k)/32] & (1 << ((k)%32)) )
-#define FitBits(k)          ( k/32 + (k % 32 != 0) )
+Bitset *bitset_create_empty(bitset_index size);
+Bitset *bitset_create_filled(bitset_index size, Bitset value);
 
-bitset_t *bitset_create(bitset_size_t size);
+void bitset_destroy(Bitset *bitset);
 
-bitset_t *bitset_create_filled(bitset_size_t size, bitset_t value);
+Bitset bitset_test(Bitset *bitset, bitset_index index);
+void bitset_set(Bitset *bitset, bitset_index index);
+void bitset_clear(Bitset *bitset, bitset_index index);
 
 #endif // BITSET_H
