@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "bitset.h"
 
 // It is generally accepted that a byte occupies 8 bits.

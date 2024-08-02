@@ -2,7 +2,6 @@
 #define BITSET_H
 
 #include <stdint.h>
-#include <stdlib.h>
 
 /**
  * A word in a set of bits.
